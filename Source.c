@@ -1,44 +1,49 @@
-#include<stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>;
+#include <stdlib.h>;
 int main()
 {
-	
-	int q;
-	char w;
-	unsigned char e;
-	short r;
-	unsigned short t;
-	unsigned int y;
-	long u;
-	unsigned long i;
-	float o;
-	double p;
-	long double a;
-	
-	int s = 1;
-	char d = 2;
-	unsigned char f = 3;
-	short g = 4;
-	unsigned short h = 5;
-	unsigned int j= 6;
-	long k = 7;
-	unsigned long l = 8;
-	float z = 9;
-	double x = 10;
-	long double c = 11;
+	int n;
+	double min;
+	double max;
+	int i = 0;
 
 
+	printf("n=\t");
+	scanf_s("%d", &n);
 
-	printf("%d\n", s);
-	printf("%d\n", d);
-	printf("%d\n", f);
-	printf("%d\n", g);
-	printf("%d\n", h);
-	printf("%d\n", j);
-	printf("%d\n", k);
-	printf("%d\n", l);
-	printf("%f\n", z);
-	printf("%lf\n", x);
-	printf("%lf\n", c);
-	return 0;
+	if (n <= 0)
+	{
+		printf("error_n<=0");
+			return 0;
+	}
+
+	printf("Min=\t");
+	scanf_s("%lf", &min);
+
+	printf("Max=\t");
+	scanf_s("%lf", &max);
+
+	if (min > max)
+	{
+		printf("error_MIN>MAX");
+			return 0;
+	}
+
+	double* mas;
+	mas = (double*)malloc(n * sizeof(double));
+
+
+	for (i = 0; i < n; i++);
+	{
+		mas[i] = (((double)rand())/RAND_MAX) * (min-max)+min;
+	}
+	for (i = 0; i < n; i++)
+		printf("mas[%d] = %lf\n", i);
+
+
+	 free(mas);
+		return 0;
 
 }
