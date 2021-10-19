@@ -40,7 +40,7 @@ int main()
 		mas[i] = (((double)rand())/RAND_MAX) * (min-max)+min;
 	}
 	for (i = 0; i < n; i++)
-		printf("mas[%d] = %lf\n", i);
+		printf("mas[%d] = %lf\n", i,mas[i]);
 
 
 	 free(mas);
